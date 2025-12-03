@@ -1,0 +1,394 @@
+<nav
+  class="w-full bg-[rgb(var(--bg))] text-[rgb(var(--text))] border-b border-black/10 relative"
+>
+  <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="img/logo2.png" class="w-36" alt="logo" />
+    </div>
+
+    <div class="hidden md:flex items-center gap-6 relative">
+      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+        >Home</a
+      >
+      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+        >About Us</a
+      >
+      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+        >Contact</a
+      >
+
+      <button
+        #pagesBtn
+        (click)="togglePages()"
+        class="flex items-center gap-2 cursor-pointer hover:text-[rgb(var(--hover-text))] transition"
+      >
+        <span>Pages</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path stroke="currentColor" stroke-width="2" d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <div
+        *ngIf="pagesOpen"
+        #pagesDropdown
+        class="absolute -right-60 top-full mt-3 w-[760px] p-6 rounded-xl shadow-xl bg-[rgb(var(--bg))] z-40"
+        [ngClass]="{
+          'fade-up': !isAnimating,
+          'fade-out': isAnimating
+        }"
+      >
+        <div class="grid grid-cols-2 gap-10">
+          <div>
+            <h3 class="text-gray-400 text-sm font-semibold mb-4">
+              Quick Links
+            </h3>
+
+            <ul class="space-y-3">
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">Homepage</div>
+                  <div class="item-desc">
+                    Explore our main landing page and key highlights
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20 22H4V20C4 17.2386 6.23858 15 9 15H15C17.7614 15 20 17.2386 20 20V22ZM12 13C8.68629 13 6 10.3137 6 7C6 3.68629 8.68629 1 12 1C15.3137 1 18 3.68629 18 7C18 10.3137 15.3137 13 12 13Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">About Us</div>
+                  <div class="item-desc">
+                    Learn more about our mission, vision, and team
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M19 7H24V9H19V7ZM17 12H24V14H17V12ZM20 17H24V19H20V17ZM2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22H16C16 18.6863 13.3137 16 10 16C6.68629 16 4 18.6863 4 22H2ZM10 13C6.685 13 4 10.315 4 7C4 3.685 6.685 1 10 1C13.315 1 16 3.685 16 7C16 10.315 13.315 13 10 13ZM10 11C12.21 11 14 9.21 14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">Contact</div>
+                  <div class="item-desc">
+                    Reach out to us for inquiries and support
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M5.45455 15L1 18.5V3C1 2.44772 1.44772 2 2 2H17C17.5523 2 18 2.44772 18 3V15H5.45455ZM4.76282 13H16V4H3V14.3851L4.76282 13ZM8 17H18.2372L20 18.3851V8H21C21.5523 8 22 8.44772 22 9V22.5L17.5455 19H9C8.44772 19 8 18.5523 8 18V17Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">FAQs</div>
+                  <div class="item-desc">Common questions and answers</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-gray-400 text-sm font-semibold mb-4">
+              Other Pages
+            </h3>
+
+            <ul class="space-y-6">
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M17.0047 16.0028H19.0047V4.00281H9.00468V6.00281H17.0047V16.0028ZM17.0047 18.0028V21.0019C17.0047 21.5547 16.5547 22.0028 15.9978 22.0028H4.01154C3.45548 22.0028 3.00488 21.5582 3.00488 21.0019L3.00748 7.00368C3.00759 6.45091 3.45752 6.00281 4.0143 6.00281H7.00468V3.00281C7.00468 2.45052 7.4524 2.00281 8.00468 2.00281H20.0047C20.557 2.00281 21.0047 2.45052 21.0047 3.00281V17.0028C21.0047 17.5551 20.557 18.0028 20.0047 18.0028H17.0047ZM5.0073 8.00281L5.00507 20.0028H15.0047V8.00281H5.0073ZM7.00468 16.0028H11.5047C11.7808 16.0028 12.0047 15.7789 12.0047 15.5028C12.0047 15.2267 11.7808 15.0028 11.5047 15.0028H8.50468C7.12397 15.0028 6.00468 13.8835 6.00468 12.5028C6.00468 11.1221 7.12397 10.0028 8.50468 10.0028H9.00468V9.00281H11.0047V10.0028H13.0047V12.0028H8.50468C8.22854 12.0028 8.00468 12.2267 8.00468 12.5028C8.00468 12.7789 8.22854 13.0028 8.50468 13.0028H11.5047C12.8854 13.0028 14.0047 14.1221 14.0047 15.5028C14.0047 16.8835 12.8854 18.0028 11.5047 18.0028H11.0047V19.0028H9.00468V18.0028H7.00468V16.0028Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">Pricing</div>
+                  <div class="item-desc">
+                    Discover our plans and choose the best one
+                  </div>
+                </div>
+              </li>
+
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">404</div>
+                  <div class="item-desc">The page could not be found</div>
+                </div>
+              </li>
+
+              <li
+                class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
+              >
+                <div class="icon-box">
+                  <svg class="icon" fill="none" viewBox="0 0 24 24">
+                    <path
+                      stroke="currentColor"
+                      stroke-width="2"
+                      d="M12 8v4l3 3M21 12A9 9 0 1 1 3 12a9 9 0 0 1 18 0z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="item-title">Coming Soon</div>
+                  <div class="item-desc">Stay tuned for new features</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <div class="p-1.5 rounded-full bg-[rgb(var(--menu-bar-tooggle))]">
+        <button
+          (click)="toggleTheme()"
+          class="w-6 h-6 flex items-center justify-center rounded-full transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M9.97308 18H11V13H13V18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM10 20V21H14V20H10ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992Z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <button
+        class="bg-[#00ffa2] text-black px-6 py-1.5 rounded-md font-medium hover:bg-[#00ffa2cc] transition"
+      >
+        Log In
+      </button>
+      <button
+        class="md:hidden w-10 h-10 flex items-center justify-center rounded bg-[rgb(var(--menu-bar-tooggle))]"
+        (click)="mobileMenuOpen = true"
+      >
+        <svg viewBox="0 0 24 24" class="w-6 h-6">
+          <path
+            stroke="currentColor"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div
+  class="fixed top-0 right-0 h-full w-[300px] bg-[rgb(var(--menu-bg))] text-[rgb(var(--text))] shadow-xl transform transition-transform duration-300 md:hidden"
+  [class.translate-x-full]="!mobileMenuOpen"
+>
+  <div class="flex items-center justify-between px-6 h-20">
+    <img src="img/logo2.png" class="w-32" alt="" />
+    <button (click)="mobileMenuOpen = false">
+      <svg class="w-6 h-6" viewBox="0 0 24 24">
+        <path stroke="currentColor" stroke-width="2" d="M6 6l12 12M18 6L6 18" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="flex flex-col px-6 space-y-6 mt-4">
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9.48907C3 9.18048 3.14247 8.88917 3.38606 8.69972L11.3861 2.47749C11.7472 2.19663 12.2528 2.19663 12.6139 2.47749L20.6139 8.69972C20.8575 8.88917 21 9.18048 21 9.48907V20ZM19 19V9.97815L12 4.53371L5 9.97815V19H19Z"
+          ></path>
+        </svg>
+      </div>
+      Homepage
+    </a>
+
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24">
+          <path
+            stroke="currentColor"
+            stroke-width="2"
+            d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4Zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4Z"
+          />
+        </svg>
+      </div>
+      About Us
+    </a>
+
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M19 7H24V9H19V7ZM17 12H24V14H17V12ZM20 17H24V19H20V17ZM2 22C2 17.5817 5.58172 14 10 14C14.4183 14 18 17.5817 18 22H16C16 18.6863 13.3137 16 10 16C6.68629 16 4 18.6863 4 22H2ZM10 13C6.685 13 4 10.315 4 7C4 3.685 6.685 1 10 1C13.315 1 16 3.685 16 7C16 10.315 13.315 13 10 13ZM10 11C12.21 11 14 9.21 14 7C14 4.79 12.21 3 10 3C7.79 3 6 4.79 6 7C6 9.21 7.79 11 10 11Z"
+          ></path>
+        </svg>
+      </div>
+      Contact
+    </a>
+
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M5.45455 15L1 18.5V3C1 2.44772 1.44772 2 2 2H17C17.5523 2 18 2.44772 18 3V15H5.45455ZM4.76282 13H16V4H3V14.3851L4.76282 13ZM8 17H18.2372L20 18.3851V8H21C21.5523 8 22 8.44772 22 9V22.5L17.5455 19H9C8.44772 19 8 18.5523 8 18V17Z"
+          ></path>
+        </svg>
+      </div>
+      FAQs
+    </a>
+
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M17.0047 16.0028H19.0047V4.00281H9.00468V6.00281H17.0047V16.0028ZM17.0047 18.0028V21.0019C17.0047 21.5547 16.5547 22.0028 15.9978 22.0028H4.01154C3.45548 22.0028 3.00488 21.5582 3.00488 21.0019L3.00748 7.00368C3.00759 6.45091 3.45752 6.00281 4.0143 6.00281H7.00468V3.00281C7.00468 2.45052 7.4524 2.00281 8.00468 2.00281H20.0047C20.557 2.00281 21.0047 2.45052 21.0047 3.00281V17.0028C21.0047 17.5551 20.557 18.0028 20.0047 18.0028H17.0047ZM5.0073 8.00281L5.00507 20.0028H15.0047V8.00281H5.0073ZM7.00468 16.0028H11.5047C11.7808 16.0028 12.0047 15.7789 12.0047 15.5028C12.0047 15.2267 11.7808 15.0028 11.5047 15.0028H8.50468C7.12397 15.0028 6.00468 13.8835 6.00468 12.5028C6.00468 11.1221 7.12397 10.0028 8.50468 10.0028H9.00468V9.00281H11.0047V10.0028H13.0047V12.0028H8.50468C8.22854 12.0028 8.00468 12.2267 8.00468 12.5028C8.00468 12.7789 8.22854 13.0028 8.50468 13.0028H11.5047C12.8854 13.0028 14.0047 14.1221 14.0047 15.5028C14.0047 16.8835 12.8854 18.0028 11.5047 18.0028H11.0047V19.0028H9.00468V18.0028H7.00468V16.0028Z"
+          ></path>
+        </svg>
+      </div>
+      Pricing
+    </a>
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM11 15H13V17H11V15ZM11 7H13V13H11V7Z"
+          ></path>
+        </svg>
+      </div>
+      404
+    </a>
+
+    <a
+      class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
+    >
+      <div
+        class="w-10 h-10 rounded-lg bg-[rgb(var(--menu-bar-tooggle))] flex items-center justify-center"
+      >
+        <svg
+          class="w-5 h-5"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+        >
+          <path
+            d="M4 2H20V6.45994L13.5366 12L20 17.5401V22H4V17.5401L10.4634 12L4 6.45994V2ZM12 10.6829L18 5.54007V4H6V5.54007L12 10.6829ZM12 13.3171L6 18.4599V20H18V18.4599L12 13.3171Z"
+          ></path>
+        </svg>
+      </div>
+      Coming Soon
+    </a>
+  </div>
+</div>

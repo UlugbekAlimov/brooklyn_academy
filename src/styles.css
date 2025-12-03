@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root {
+  --bg: 255 255 255;
+  --text: 0 0 0;
+  --secondary-text: 61 61 61;
+  --hover-text: 0 205 142;
+  --menu-bg: 255 255 255;
+  --menu-bar-tooggle: 230 230 230;
+}
+
+[data-theme="black"] {
+  --bg: 0 0 0;
+  --text: 255 255 255;
+  --secondary-text: 186 186 186;
+  --hover-text: 0 205 142;
+  --menu-bg: 15 18 21;
+  --menu-bar-tooggle: 40 40 40;
+}
+
+input::placeholder {
+  color: rgb(var(--placeholder));
+  opacity: 1;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.icon-box {
+  @apply px-2.5 h-10 rounded-lg bg-gray-100 flex items-center justify-center;
+}
+
+.icon {
+  @apply w-5 h-5 text-gray-700;
+}
+
+.item-title {
+  @apply font-medium;
+}
+
+.item-desc {
+  @apply text-sm text-gray-500;
+}

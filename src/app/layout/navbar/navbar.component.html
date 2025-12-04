@@ -207,7 +207,7 @@
       <div class="p-1.5 rounded-full bg-[rgb(var(--menu-bar-tooggle))]">
         <button
           (click)="toggleTheme()"
-          class="w-6 h-6 flex items-center justify-center rounded-full transition"
+          class="w-6 h-6 flex cursor-pointer items-center justify-center rounded-full transition"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +221,8 @@
         </button>
       </div>
       <button
-        class="bg-[#00ffa2] text-black px-6 py-1.5 rounded-md font-medium hover:bg-[#00ffa2cc] transition"
+        routerLink="/login"
+        class="bg-[rgb(var(--text-secondary))] text-black px-6 py-1.5 cursor-pointer rounded-md font-medium hover:bg-[rgb(var(--text-secondary-hover))] transition"
       >
         Log In
       </button>

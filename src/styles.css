@@ -8,6 +8,13 @@
   --hover-text: 0 205 142;
   --menu-bg: 255 255 255;
   --menu-bar-tooggle: 230 230 230;
+
+  --text-secondary: 0 255 162;
+  --text-secondary-hover: 68 236 174;
+  
+  --hero-bg: url('/img/white.png');
+  --client-logo: 150 160 170; 
+
 }
 
 [data-theme="black"] {
@@ -17,6 +24,13 @@
   --hover-text: 0 205 142;
   --menu-bg: 15 18 21;
   --menu-bar-tooggle: 40 40 40;
+
+  --text-secondary: 0 255 162;
+  --text-secondary-hover: 68 236 174;
+
+  --hero-bg: url('/img/dark.png');
+--client-logo: 210 220 230
+
 }
 
 input::placeholder {

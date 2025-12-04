@@ -1,8 +1,8 @@
 <div
-  class="min-h-screen flex items-center justify-center bg-[rgb(var(--bg))] text-[rgb(var(--text))] px-4"
+  class="min-h-screen flex items-center justify-center bg-white text-black px-4"
 >
   <div
-    class="w-full max-w-md bg-[rgb(var(--bg))] rounded-2xl shadow-lg border border-black/5 p-6"
+    class="w-full max-w-md bg-white rounded-2xl shadow-lg border border-black/5 p-6"
   >
     <header class="mb-6 text-center">
       <h1 class="text-2xl font-semibold">Welcome back</h1>
@@ -16,7 +16,7 @@
           type="email"
           formControlName="email"
           autocomplete="email"
-          class="px-3 py-2 rounded-lg border border-black/10 bg-transparent text-[rgb(var(--text))] outline-none focus:ring-2 focus:ring-[rgb(var(--hover-text))] transition"
+          class="px-3 py-2 rounded-lg border border-black/10 bg-transparent text-black outline-none focus:ring-2 focus:ring-[rgb(var(--hover-text))] transition"
           [attr.aria-invalid]="email?.invalid && email?.touched ? true : null"
         />
         <div
@@ -35,7 +35,7 @@
             formControlName="password"
             [type]="passwordVisible ? 'text' : 'password'"
             autocomplete="new-password"
-            class="flex-1 px-3 py-2 rounded-lg border border-black/10 bg-transparent text-[rgb(var(--text))] outline-none focus:ring-2 focus:ring-[rgb(var(--hover-text))] transition"
+            class="flex-1 px-3 py-2 rounded-lg border border-black/10 bg-transparent text-black outline-none focus:ring-2 focus:ring-[rgb(var(--hover-text))] transition"
             [attr.aria-invalid]="
               password?.invalid && password?.touched ? true : null
             "

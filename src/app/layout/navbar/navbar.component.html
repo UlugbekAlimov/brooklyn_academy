@@ -1,5 +1,5 @@
 <nav
-  class="w-full bg-[rgb(var(--bg))] text-[rgb(var(--text))] border-b border-black/10 relative"
+  class="fixed top-0 left-0 z-50 w-full bg-[rgb(var(--bg))] text-[rgb(var(--text))] border-b border-black/10"
 >
   <div class="container mx-auto px-6 h-20 flex items-center justify-between">
     <div class="flex items-center gap-3">
@@ -243,7 +243,7 @@
 </nav>
 
 <div
-  class="fixed top-0 right-0 h-full w-[300px] bg-[rgb(var(--menu-bg))] text-[rgb(var(--text))] shadow-xl transform transition-transform duration-300 md:hidden"
+  class="fixed top-0 z-1000 right-0 h-full w-[300px] bg-[rgb(var(--menu-bg))] text-[rgb(var(--text))] shadow-xl transform transition-transform duration-300 md:hidden"
   [class.translate-x-full]="!mobileMenuOpen"
 >
   <div class="flex items-center justify-between px-6 h-20">

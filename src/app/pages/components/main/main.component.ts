@@ -8,7 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './main.component.css',
 })
 export class MainComponent implements OnInit, OnDestroy {
-  words = ['text1212', 'text1212', 'text1212', 'text1212'];
+  words = ['first', 'descong', 'third', 'fourth'];
   
   displayedText = signal('');
   cursorVisible = signal(true);

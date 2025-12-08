@@ -8,9 +8,10 @@ import { GaleryComponent } from "../components/galery/galery.component";
 import { AboutComponent } from "../components/about/about.component";
 import { StatsComponent } from "../components/stats/stats.component";
 import { PricingComponent } from "../components/pricing/pricing.component";
+import { TestimonialsComponent } from "../components/testimonials/testimonials.component";
 @Component({
   selector: 'app-landing',
-  imports: [MainComponent, WhoweareComponent, ClientsComponent, ShowcaseComponent, FeaturesComponent, GaleryComponent, AboutComponent, StatsComponent, PricingComponent],
+  imports: [MainComponent, WhoweareComponent, ClientsComponent, ShowcaseComponent, FeaturesComponent, GaleryComponent, AboutComponent, StatsComponent, PricingComponent, TestimonialsComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

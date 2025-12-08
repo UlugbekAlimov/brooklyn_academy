@@ -1,0 +1,72 @@
+<!-- testimonials.component.html — исправленная версия -->
+<section class="w-full py-16 md:py-20 relative overflow-hidden bg-[rgb(var(--bg))]">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="uppercase text-sm tracking-widest text-gray-400 mb-2">
+      Testimonials
+    </p>
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[rgb(var(--text))] mb-12 lg:mb-20">
+      Hear what our clients have to say about us
+    </h2>
+  </div>
+
+  <div class="relative">
+    <div class="overflow-hidden py-10">
+      <div
+        #slider
+        class="flex transition-transform duration-700 ease-in-out"
+        style="transition: transform 700ms ease-in-out;"
+      >
+        <div
+          *ngFor="let item of testimonials"
+          class="flex-shrink-0 px-4 md:px-6 lg:px-8"
+          [style.width.%]="100 / slidesToShow"
+        >
+        <div
+            class="bg-[rgb(var(--swiper-bg))] rounded-3xl shadow-xl p-6 md:p-8 
+                    h-full flex flex-col items-center gap-6"
+
+
+            [ngClass]="{
+              'scale-105 shadow-2xl z-10': slidesToShow === 3 && testimonials.indexOf(item) === current
+            }"
+          >
+            <img
+              [src]="item.img"
+              alt="{{ item.name }}"
+              class="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover rounded-2xl shadow-lg flex-shrink-0"
+            />
+
+            <div class="text-left flex-1">
+              <div class="flex mb-4 gap-1">
+                <svg *ngFor="let _ of [].constructor(item.stars)" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"/>
+                </svg>
+                <svg *ngFor="let _ of [].constructor(5 - item.stars)" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"/>
+                </svg>
+              </div>
+
+              <p class="text-base md:text-lg lg:text-xl text-[rgb(var(--text))] font-medium leading-relaxed mb-5">
+                "{{ item.text }}"
+              </p>
+
+              <p class="text-lg lg:text-xl font-semibold text-[rgb(var(--text))]">{{ item.name }}</p>
+              <p class="text-gray-500">{{ item.role }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Стрелки остаются по краям экрана на десктопе -->
+    <button (click)="prev()"
+      class="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"/></svg>
+    </button>
+
+    <button (click)="next()"
+      class="absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"/></svg>
+    </button>
+  </div>
+</section>

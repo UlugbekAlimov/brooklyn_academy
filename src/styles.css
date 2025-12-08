@@ -16,6 +16,7 @@
   --showcase-opacity: 0.25;
   --client-logo: 150 160 170; 
 
+  --swiper-bg: 247 250 252;
 
   --free: url('/img/add-dark.svg');
   --pro: url('/img/vip.svg');
@@ -37,6 +38,8 @@
   --showcase-bg: url('/img/dark2.png');
   --showcase-opacity: 1; 
   --client-logo: 210 220 230;
+
+  --swiper-bg: 17 20 23;
 
   --free: url('/img/add-white.svg');
   --pro: url('/img/vip-dark.svg');

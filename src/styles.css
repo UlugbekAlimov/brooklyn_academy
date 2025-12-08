@@ -16,6 +16,10 @@
   --showcase-opacity: 0.25;
   --client-logo: 150 160 170; 
 
+
+  --free: url('/img/add-dark.svg');
+  --pro: url('/img/vip.svg');
+  --saver: url('/img/vip-vipwhite.svg');
 }
 
 [data-theme="black"] {
@@ -32,7 +36,11 @@
   --hero-bg: url('/img/dark.png');
   --showcase-bg: url('/img/dark2.png');
   --showcase-opacity: 1; 
-  --client-logo: 210 220 230
+  --client-logo: 210 220 230;
+
+  --free: url('/img/add-white.svg');
+  --pro: url('/img/vip-dark.svg');
+  --saver: url('/img/vip-vipdark.svg');
 
 }
 

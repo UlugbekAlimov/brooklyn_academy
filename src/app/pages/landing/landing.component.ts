@@ -3,10 +3,14 @@ import { MainComponent } from "../components/main/main.component";
 import { WhoweareComponent } from "../components/whoweare/whoweare.component";
 import { ClientsComponent } from "../components/clients/clients.component";
 import { ShowcaseComponent } from "../components/showcase/showcase.component";
-
+import { FeaturesComponent } from "../components/features/features.component";
+import { GaleryComponent } from "../components/galery/galery.component";
+import { AboutComponent } from "../components/about/about.component";
+import { StatsComponent } from "../components/stats/stats.component";
+import { PricingComponent } from "../components/pricing/pricing.component";
 @Component({
   selector: 'app-landing',
-  imports: [MainComponent, WhoweareComponent, ClientsComponent, ShowcaseComponent],
+  imports: [MainComponent, WhoweareComponent, ClientsComponent, ShowcaseComponent, FeaturesComponent, GaleryComponent, AboutComponent, StatsComponent, PricingComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css'
 })

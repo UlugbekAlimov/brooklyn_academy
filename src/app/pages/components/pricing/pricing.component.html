@@ -1,0 +1,62 @@
+<section class="bg-[rgb(var(--bg))] text-[rgb(var(--text))] py-28 px-6">
+
+  <div class="max-w-6xl mx-auto text-center">
+
+    <p class="uppercase text-sm tracking-[3px] text-gray-400 mb-2">
+      Pricing
+    </p>
+
+    <h2 class="text-4xl font-bold mb-10">
+      Choose the package that fit best for you
+    </h2>
+
+    <div class="flex justify-center mb-16">
+      <div class="px-6 py-2 rounded-full bg-[#5b3d1d] border border-[#a16b32] text-sm text-white">
+        Best value
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+      <div *ngFor="let p of plans"
+           class="flex flex-col items-center">
+
+        <div class="icon mb-4"
+            [ngStyle]="{ 'background-image': p.icon }">
+
+        </div>
+
+        <h3 class="text-xl font-semibold mb-1">
+          {{ p.name }}
+        </h3>
+
+        <div class="text-3xl font-bold mb-6">
+          {{ p.price }}
+          <span *ngIf="p.monthly" class="text-gray-400 text-lg font-normal">/ month</span>
+        </div>
+
+        <ul class="text-left space-y-2 mb-10">
+          <li *ngFor="let f of p.features" class="flex items-start gap-2">
+
+            <span *ngIf="f.included" class="text-green-400 text-xl">✔</span>
+            <span *ngIf="!f.included" class="text-gray-600 text-xl">—</span>
+
+            <span [class.text-gray-400]="!f.included">
+              {{ f.text }}
+            </span>
+
+          </li>
+        </ul>
+
+        <button class="w-48 py-3 rounded-lg text-black
+                       bg-[rgb(var(--text-secondary))] hover:bg-[rgb(var(--text-secondary-hover))] transition font-semibold">
+          {{ p.button }}
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

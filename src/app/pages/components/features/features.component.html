@@ -1,0 +1,40 @@
+<section class="relative bg-[rgb(var(--bg))] overflow-hidden pt-8 pb-32">
+  <div class="relative container mx-auto px-6">
+    <p
+      class="text-center text-sm font-semibold tracking-widest text-gray-500 uppercase"
+    >
+      Features
+    </p>
+
+    <h2 class="text-center mt-3 text-4xl font-bold text-[rgb(var(--text))]">
+      Packed with essential abilities
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20 mt-20">
+      <div class="flex gap-4" *ngFor="let f of features">
+        <div class="text-blue-600 text-2xl">
+          <svg
+            class="w-8 h-8"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12.9998 3L12.9996 10.267L19.294 6.63397L20.294 8.36602L14.0006 11.999L20.294 15.634L19.294 17.366L12.9996 13.732L12.9998 21H10.9998L10.9996 13.732L4.70557 17.366L3.70557 15.634L9.99857 12L3.70557 8.36602L4.70557 6.63397L10.9996 10.267L10.9998 3H12.9998Z"
+            ></path>
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="font-semibold text-[rgb(var(--text))] text-lg">
+            {{ f.title }}
+          </h3>
+
+          <p class="text-gray-600 mt-1">
+            {{ f.text }}
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>

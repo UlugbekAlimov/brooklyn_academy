@@ -1,0 +1,32 @@
+button {
+  cursor: pointer;
+}
+
+img {
+  will-change: transform;
+}
+
+.tab-btn {
+  position: relative;
+  padding-bottom: 6px;
+  transition: color .25s ease;
+}
+
+.tab-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0;
+  height: 2px;
+  background: rgb(96 165 250); 
+  transition: width .25s ease;
+}
+
+.tab-btn.active {
+  color: rgb(96 165 250); 
+}
+
+.tab-btn.active::after {
+  width: 100%;
+}

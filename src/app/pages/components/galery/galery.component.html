@@ -1,0 +1,78 @@
+<section class="relative bg-[rgb(var(--bg))] py-24 px-6 overflow-hidden">
+  <div
+    class="absolute inset-0 pointer-events-none"
+    style="
+      opacity: 0.1;
+      background-image: repeating-linear-gradient(
+        135deg,
+        #ffffff 0px,
+        #000 4px,
+        transparent 4px,
+        transparent 12px
+      );
+      mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+      );
+      -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 20%,
+        black 80%,
+        transparent 100%
+      );
+    "
+  ></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <p
+      class="text-center text-sm font-semibold tracking-widest text-gray-500 uppercase"
+    >
+      Gallery
+    </p>
+    <h2 class="text-center mt-3 text-4xl text-[rgb(var(--text))] font-bold">
+      Project showcase
+    </h2>
+
+    <div class="mt-20 grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        *ngFor="let p of projects.slice(0, 3)"
+        class="flex flex-col items-center text-center group"
+      >
+        <div class="w-full h-[320px] rounded-3xl overflow-hidden shadow-lg">
+          <img
+            [src]="p.img"
+            [alt]="p.title"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-sm font-semibold text-[rgb(var(--text))]">
+          {{ p.title }}
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div
+        *ngFor="let p of projects.slice(3, 7)"
+        class="flex flex-col items-center text-center group"
+      >
+        <div class="w-full h-[320px] rounded-3xl overflow-hidden shadow-lg">
+          <img
+            [src]="p.img"
+            [alt]="p.title"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+
+        <p class="mt-4 text-sm font-semibold text-[rgb(var(--text))]">
+          {{ p.title }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

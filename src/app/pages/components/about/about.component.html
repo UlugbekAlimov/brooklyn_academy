@@ -1,0 +1,75 @@
+<section class="w-full bg-[rgb(var(--bg))] text-[rgb(var(--text))] py-24 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14">
+    <div class="relative">
+      <div class="sticky top-24">
+        <img
+          src="img/building.avif"
+          alt="preview"
+          class="w-full rounded-2xl shadow-2xl"
+        />
+      </div>
+    </div>
+
+    <div>
+      <p class="uppercase text-sm tracking-widest text-gray-400 mb-2">
+        More about us
+      </p>
+
+      <h2 class="text-4xl font-bold mb-6">
+        On a mission to empower<br />
+        remote teams
+      </h2>
+
+      <div class="flex gap-8 text-lg font-semibold mb-10">
+        <button
+          (click)="activeTab = 'goal'"
+          class="tab-btn"
+          [class.active]="activeTab === 'goal'"
+        >
+          Our Goal
+        </button>
+
+        <button
+          (click)="activeTab = 'approach'"
+          class="tab-btn"
+          [class.active]="activeTab === 'approach'"
+        >
+          Our Approach
+        </button>
+
+        <button
+          (click)="activeTab = 'strength'"
+          class="tab-btn"
+          [class.active]="activeTab === 'strength'"
+        >
+          Our Strength
+        </button>
+      </div>
+
+      <div
+        class="space-y-6 leading-relaxed text-[rgb(var(--text))] text-[17px]"
+      >
+        <div *ngIf="activeTab === 'goal'">
+          <h3 class="text-2xl font-bold mb-4">Our Goal</h3>
+          <p class="opacity-90 whitespace-pre-line">
+            {{ texts.goal }}
+          </p>
+        </div>
+
+        <div *ngIf="activeTab === 'approach'">
+          <h3 class="text-2xl font-bold mb-4">Our Approach</h3>
+          <p class="opacity-90 whitespace-pre-line">
+            {{ texts.approach }}
+          </p>
+        </div>
+
+        <div *ngIf="activeTab === 'strength'">
+          <h3 class="text-2xl font-bold mb-4">Our Strength</h3>
+          <p class="opacity-90 whitespace-pre-line">
+            {{ texts.strength }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

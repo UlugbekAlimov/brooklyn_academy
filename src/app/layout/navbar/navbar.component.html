@@ -7,13 +7,22 @@
     </div>
 
     <div class="hidden md:flex items-center gap-6 relative">
-      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+      <a
+        href="#"
+        (click)="scrollToSection('home', $event)"
+        class="hover:text-[rgb(var(--hover-text))] transition"
         >Home</a
       >
-      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+      <a
+        href="#"
+        (click)="scrollToSection('about', $event)"
+        class="hover:text-[rgb(var(--hover-text))] transition"
         >About Us</a
       >
-      <a href="#" class="hover:text-[rgb(var(--hover-text))] transition"
+      <a
+        href="#"
+        (click)="scrollToSection('contact', $event)"
+        class="hover:text-[rgb(var(--hover-text))] transition"
         >Contact</a
       >
 
@@ -45,6 +54,9 @@
 
             <ul class="space-y-3">
               <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('home')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -67,6 +79,9 @@
               </li>
 
               <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('about')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -89,6 +104,9 @@
               </li>
 
               <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('contact')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -111,6 +129,9 @@
               </li>
 
               <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('faq')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -139,6 +160,9 @@
 
             <ul class="space-y-6">
               <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('pricing')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -161,6 +185,9 @@
               </li>
 
               <li
+                role="button"
+                tabindex="0"
+                routerLink="/not-found"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -180,7 +207,10 @@
                 </div>
               </li>
 
-              <li
+              <!-- <li
+                role="button"
+                tabindex="0"
+                (click)="scrollToSection('home')"
                 class="flex gap-4 p-2 cursor-pointer hover:bg-gray-200 transition-colors rounded-md"
               >
                 <div class="icon-box">
@@ -196,7 +226,7 @@
                   <div class="item-title">Coming Soon</div>
                   <div class="item-desc">Stay tuned for new features</div>
                 </div>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -257,6 +287,7 @@
 
   <div class="flex flex-col px-6 space-y-6 mt-4">
     <a
+      (click)="scrollToSection('home')"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -277,6 +308,7 @@
     </a>
 
     <a
+      (click)="scrollToSection('about')"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -294,6 +326,7 @@
     </a>
 
     <a
+      (click)="scrollToSection('contact')"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -314,6 +347,7 @@
     </a>
 
     <a
+      (click)="scrollToSection('faq')"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -334,6 +368,7 @@
     </a>
 
     <a
+      (click)="scrollToSection('pricing')"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -353,6 +388,7 @@
       Pricing
     </a>
     <a
+      routerLink="/not-found"
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
       <div
@@ -371,7 +407,7 @@
       </div>
       404
     </a>
-
+<!-- 
     <a
       class="flex cursor-pointer items-center gap-4 text-[rgb(var(--secondary-text))] hover:text-[rgb(var(--hover-text))] transition"
     >
@@ -390,6 +426,6 @@
         </svg>
       </div>
       Coming Soon
-    </a>
+    </a> -->
   </div>
 </div>

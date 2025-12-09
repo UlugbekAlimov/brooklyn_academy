@@ -1,0 +1,125 @@
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  min-height: 40vh;
+  padding: 40px 20px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 60px;
+  color: white;
+}
+
+.team-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; 
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px; 
+}
+
+
+.team-card {
+  text-align: center;
+  overflow: hidden;
+    border-radius: 10px;
+}
+
+.team-card img {
+  width: 220px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid #222;
+  margin-bottom: 10px;
+  transition: transform 0.35s ease; 
+}
+
+.team-card:hover img {
+  transform: scale(1.08); 
+}
+
+.team-card h3 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.team-card p {
+  color: #00FFA2;
+  font-size: 0.85rem;
+}
+
+.sophia   { transform: translateX(-40px); }
+.gina     { transform: translateX(40px); }
+
+.madeline { transform: translateX(-80px); }
+.amy      { transform: translateX(0); }
+.charles  { transform: translateX(80px); }
+
+.terry    { transform: translateX(-40px); }
+.raymond  { transform: translateX(40px); }
+
+@media (max-width: 1024px) {
+  .team-row {
+    gap: 25px;
+  }
+
+  .team-card img {
+    width: 180px;
+    height: 210px;
+  }
+
+  .sophia   { transform: translateX(-20px); }
+  .gina     { transform: translateX(20px); }
+
+  .madeline { transform: translateX(-40px); }
+  .charles  { transform: translateX(40px); }
+
+  .terry    { transform: translateX(-20px); }
+  .raymond  { transform: translateX(20px); }
+}
+
+@media (max-width: 768px) {
+  .team-container {
+    gap: 30px;
+  }
+
+  .team-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .team-card img {
+    width: 160px;
+    height: 180px;
+  }
+
+  .team-card {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .team-card img {
+    width: 130px;
+    height: 170px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}

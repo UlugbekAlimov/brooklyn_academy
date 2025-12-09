@@ -56,4 +56,19 @@ export class NavbarComponent {
       root.setAttribute('data-theme', 'black');
     }
   }
+
+  scrollToSection(sectionId: string, event?: Event) {
+    event?.preventDefault();
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    this.mobileMenuOpen = false;
+
+    if (this.pagesOpen) {
+      this.startCloseAnimation();
+    }
+  }
 }

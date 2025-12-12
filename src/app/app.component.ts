@@ -4,6 +4,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { filter } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FooterComponent } from "./layout/footer/footer.component";
+import { CookieBannerComponent } from "./layout/cookie-banner/cookie-banner.component";
 
 const ROUTES_WITHOUT_NAVBARS = ['/create-account', '/login', '/forgot-password', '/not-found'];
 
@@ -14,7 +15,7 @@ const matchesRoute = (url: string, route: string): boolean => {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, CookieBannerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

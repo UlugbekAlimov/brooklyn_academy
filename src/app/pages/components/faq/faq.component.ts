@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './faq.component.css'
 })
 export class FaqComponent {
- openIndex: number | null = null;
+ openIndex: number | null = 0;
 
   faqItems = [
     {

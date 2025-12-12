@@ -4,6 +4,9 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { CookiePolicyComponent } from './pages/cookie-policy/cookie-policy.component';
+import { ServiceTermsComponent } from './pages/service-terms/service-terms.component';
+import { CandidatePrivacyComponent } from './pages/candidate-privacy/candidate-privacy.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -11,6 +14,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'cookie-policy', component: CookiePolicyComponent },
+  { path: 'service-terms', component: ServiceTermsComponent },
+  { path: 'candidate-privacy-notice', component: CandidatePrivacyComponent },
   { path: 'not-found', component: NotFoundComponent },
 
   { path: '', component: LandingComponent },

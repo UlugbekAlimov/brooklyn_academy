@@ -2,13 +2,14 @@
   <app-navbar></app-navbar>
 } 
 
-<div id="smooth-wrapper">
+<div id="smooth-wrapper mx-auto container">
   <div id="smooth-content">
     <router-outlet></router-outlet>
   </div>
 </div>
 
+<app-cookie-banner></app-cookie-banner>
+
 @if (showNavbars()) {
   <app-footer></app-footer>
 } 
-

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Component, ElementRef, HostListener, ViewChild, inject } from '@angular/core';
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
+  private readonly router = inject(Router);
   mobileMenuOpen = false;
   isAnimating = false;
   pagesOpen = false;
@@ -59,10 +60,22 @@ export class NavbarComponent {
 
   scrollToSection(sectionId: string, event?: Event) {
     event?.preventDefault();
-    const element = document.getElementById(sectionId);
+    const currentPath = (this.router.url.split('?')[0] || '').replace(/\/+$/, '');
+    const isHome = currentPath === '' || currentPath === '/';
 
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const scroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    if (isHome) {
+      scroll();
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(scroll, 150);
+      });
     }
 
     this.mobileMenuOpen = false;

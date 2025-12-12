@@ -2,3 +2,164 @@
   display: block;
   width: 100%;
 }
+
+.testimonial-card {
+  position: relative;
+  border-radius: 28px;
+  padding: 1.5rem 1rem 1.75rem 1rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 180px;
+}
+
+.avatar-bubble {
+  position: absolute;
+  left: -6px;
+  top: 10px;
+  width: 120px;
+  height: 120px;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  border: 3px solid rgb(var(--bg));
+  z-index: 2;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-left: 0;
+  padding: 0.25rem 0 0 0;
+}
+
+.card-head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 110px;
+}
+
+.name-role {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: rgb(var(--text));
+}
+
+.card-role {
+  color: rgb(var(--secondary-text));
+  font-size: 0.9rem;
+}
+
+.card-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+  fill: rgba(var(--text), 0.12);
+}
+
+.star.filled {
+  fill: #f8b400;
+}
+
+.card-quote {
+  color: rgb(var(--text));
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.card-quote.full {
+  width: 100%;
+}
+
+.edge-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  pointer-events: none;
+  z-index: 10;
+  background: linear-gradient(
+    to right,
+    rgba(var(--bg), 1) 0%,
+    rgba(var(--bg), 0.95) 20%,
+    rgba(var(--bg), 0.75) 40%,
+    rgba(var(--bg), 0.40) 60%,
+    rgba(var(--bg), 0.15) 80%,
+    rgba(var(--bg), 0.00) 100%
+  );
+}
+
+.edge-fade--right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.edge-fade--left {
+  left: 0;
+}
+
+.slider-mask {
+  mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 200px,
+      black calc(100% - 200px),
+      transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      black 200px,
+      black calc(100% - 200px),
+      transparent 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .testimonial-card {
+    padding: 1.75rem 1.25rem 2rem 1.25rem;
+  }
+
+  .avatar-bubble {
+    width: 136px;
+    height: 136px;
+    left: -10px;
+    top: -12px;
+  }
+
+  .card-head {
+    padding-left: 140px;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .testimonial-card {
+    min-height: 220px;
+  }
+
+  .card-body {
+    padding-right: 1.75rem;
+  }
+
+  .edge-fade {
+    width: 220px;
+  }
+}

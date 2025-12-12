@@ -1,10 +1,10 @@
 <section
   id="home"
-  class="w-full bg-[rgb(var(--bg))] pb-16 px-10 pt-30 md:pb-24 md:pt-40 "
+  class="w-full bg-[rgb(var(--bg))] pb-16 px-4 pt-30 md:pb-24 md:pt-40 "
 >
-  <div class="container mx-auto px-4 sm:px-6">
+  <div class="container mx-auto px-0 sm:px-6 max-w-[1500px]">
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-14 items-center">
 
       <div class="relative inline-block w-full">
 
@@ -69,11 +69,13 @@
       </div>
 
       <div class="w-full flex justify-center lg:justify-end">
-        <img 
-          src="img/logo2.png" 
-          alt="App preview"
-          class="object-cover"
-        />
+        <div class="hero-dashboard">
+          <img 
+            src="img/dashboard.webp" 
+            alt="App dashboard preview"
+            class="hero-dashboard__img"
+          />
+        </div>
       </div>
 
     </div>

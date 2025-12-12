@@ -1,125 +1,187 @@
-body {
-  font-family: system-ui, -apple-system, sans-serif;
-  min-height: 40vh;
-  padding: 40px 20px;
+:host {
+  display: block;
 }
 
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 60px;
-  color: white;
-}
-
-.team-container {
-  max-width: 100%;
+.parent {
+  max-width: 1720px;
   margin: 0 auto;
+  /* padding: 64px 16px 112px; */
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(5, 160px);
+  gap: 0px 19px;
+  justify-items: center;
+}
+
+.team-heading {
+  grid-column: 1 / -1;
+  text-align: center;
+  justify-self: center;
+  margin-bottom: 24px;
+}
+
+.card {
   display: flex;
   flex-direction: column;
-  gap: 18px; 
+  align-items: center;
+  gap: 10px;
+  width: 190px;
 }
 
-.team-row {
-  display: flex;
-  justify-content: center;
-  gap: 40px; 
-}
-
-
-.team-card {
-  text-align: center;
-  overflow: hidden;
-    border-radius: 10px;
-}
-
-.team-card img {
-  width: 220px;
+.card-photo {
+  width: 100%;
   height: 240px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid #222;
-  margin-bottom: 10px;
-  transition: transform 0.35s ease; 
+  border-radius: 22px;
+  overflow: hidden;
+  filter: grayscale(100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 58%, #f7fafc 100%), var(--img);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-blend-mode: normal, luminosity;
+  box-shadow: 0 14px 44px rgba(15, 23, 42, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.team-card:hover img {
-  transform: scale(1.08); 
+.card:hover .card-photo {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+  filter: grayscale(0%);
 }
 
-.team-card h3 {
-  font-size: 1rem;
-  margin-bottom: 4px;
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
 }
 
-.team-card p {
-  color: #00FFA2;
-  font-size: 0.85rem;
+.card-name::before {
+  content: var(--name);
+  font-size: 15px;
+  font-weight: 700;
+  color: #0b1524;
 }
 
-.sophia   { transform: translateX(-40px); }
-.gina     { transform: translateX(40px); }
-
-.madeline { transform: translateX(-80px); }
-.amy      { transform: translateX(0); }
-.charles  { transform: translateX(80px); }
-
-.terry    { transform: translateX(-40px); }
-.raymond  { transform: translateX(40px); }
-
-@media (max-width: 1024px) {
-  .team-row {
-    gap: 25px;
-  }
-
-  .team-card img {
-    width: 180px;
-    height: 210px;
-  }
-
-  .sophia   { transform: translateX(-20px); }
-  .gina     { transform: translateX(20px); }
-
-  .madeline { transform: translateX(-40px); }
-  .charles  { transform: translateX(40px); }
-
-  .terry    { transform: translateX(-20px); }
-  .raymond  { transform: translateX(20px); }
+.card-role::before {
+  content: var(--role);
+  font-size: 13px;
+  color: #4b5563;
+  white-space: pre-line;
 }
 
-@media (max-width: 768px) {
-  .team-container {
-    gap: 30px;
+.div6 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+  --img: url("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80");
+  --name: "Jake Peralta";
+  --role: "UI/UX Designer";
+}
+
+.div7 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 2;
+  --img: url("https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80");
+  --name: "Sophia Perez";
+  --role: "Lead Developer";
+}
+
+.div8 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+  grid-row-start: 3;
+  --img: url("https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80");
+  --name: "Madeline Wuntch";
+  --role: "CEO & Founder";
+}
+
+.div9 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 4;
+  --img: url("https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=900&q=80");
+  --name: "Terry Jeffords";
+  --role: "Product Manager";
+}
+
+.div10 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 3;
+  --img: url("https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80");
+  --name: "Amy Santiago";
+  --role: "Backend Engineer";
+}
+
+.div11 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+  grid-row-start: 5;
+  --img: url("https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=900&q=80");
+  --name: "Rosa Diaz";
+  --role: "DevOps Engineer";
+}
+
+.div13 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 2;
+  --img: url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80");
+  --name: "Gina Linetti";
+  --role: "Marketing Director";
+}
+
+.div14 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 6;
+  grid-row-start: 4;
+  --img: url("https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=900&q=80");
+  --name: "Raymond Holt";
+  --role: "CTO";
+}
+
+.div15 {
+  grid-row: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 3;
+  --img: url("https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80");
+  --name: "Charles Boyle";
+  --role: "QA Engineer";
+}
+
+@media (max-width: 1100px) {
+  .parent {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 18px 16px;
+    justify-items: center;
   }
 
-  .team-row {
-    flex-wrap: wrap;
-    gap: 20px;
+  .card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 165px;
   }
 
-  .team-card img {
-    width: 160px;
-    height: 180px;
-  }
-
-  .team-card {
-    transform: none !important;
+  .card-photo {
+    height: 225px;
   }
 }
 
-@media (max-width: 480px) {
-  .team-row {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+@media (max-width: 640px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 12px;
+    padding: 32px 12px 56px;
   }
 
-  .team-card img {
+  .card {
     width: 130px;
-    height: 170px;
   }
 
-  h1 {
-    font-size: 1.6rem;
+  .card-photo {
+    height: 190px;
   }
 }

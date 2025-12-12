@@ -95,3 +95,21 @@
 .corner-br .corner-line-v   { bottom: -6px; right: -1px; transform: scaleY(-1); }
 .corner-br .corner-line-h   { bottom: -1px; right: -6px; transform: scaleX(-1); }
 
+.hero-dashboard {
+  position: relative;
+  max-width: 1100px;
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+}
+
+.hero-dashboard__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
+}
+

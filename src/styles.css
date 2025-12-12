@@ -29,6 +29,9 @@
   --input-focus: #3b82f6;  
 
   --footer-bg: url('/img/white-footer.png');
+  --showcase-bg: url('/img/4-ChFq4e92.webp');
+
+  --border-faq: 247 250 252;
 
 }
 
@@ -61,6 +64,9 @@
   --input-focus: #22d3ee;      
 
   --footer-bg: url('/img/dark-footer.png');
+  --showcase-bg: url('/img/4-ChFq4e92.webp');
+
+  --border-faq: 24 26 30;
 
 }
 
@@ -92,6 +98,7 @@ html {
 .item-desc {
   @apply text-sm text-gray-500;
 }
+
 
 /* PATTERN BACKGROUND */
 .pattern {

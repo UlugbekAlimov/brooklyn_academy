@@ -10,53 +10,60 @@
   </div>
 
   <div class="relative">
-    <div class="overflow-hidden py-10">
+    <div class="overflow-hidden py-10 slider-mask">
       <div
         #slider
         class="flex transition-transform duration-700 ease-in-out"
         style="transition: transform 700ms ease-in-out;"
       >
-        <div
+        <div  
           *ngFor="let item of testimonials"
           class="flex-shrink-0 px-4 md:px-6 lg:px-8"
           [style.width.%]="100 / slidesToShow"
         >
-        <div
-            class="bg-[rgb(var(--swiper-bg))] cursor-pointer rounded-3xl shadow-xl p-6 md:p-8 
-                    h-full flex flex-col items-center gap-6"
-
-
+          <article
+            class="testimonial-card bg-[rgb(var(--swiper-bg))] cursor-pointer"
             [ngClass]="{
               'scale-105 shadow-2xl z-10': slidesToShow === 3 && testimonials.indexOf(item) === current
             }"
           >
-            <img
-              [src]="item.img"
-              alt="{{ item.name }}"
-              class="w-28 h-28 md:w-36 md:h-36 lg:w-40 lg:h-40 object-cover rounded-2xl shadow-lg flex-shrink-0"
-            />
+            <div class="avatar-bubble">
+              <img
+                [src]="item.img"
+                alt="{{ item.name }}"
+                class="avatar-img"
+              />
+            </div>
 
-            <div class="text-left flex-1">
-              <div class="flex mb-4 gap-1">
-                <svg *ngFor="let _ of [].constructor(item.stars)" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"/>
-                </svg>
-                <svg *ngFor="let _ of [].constructor(5 - item.stars)" class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"/>
-                </svg>
-              </div>
+            <div class="card-body">
+              <header class="card-head flex items-center">
+                <div class="name-role">
+                  <p class="card-title">{{ item.name }}</p>
+                  <p class="card-role">{{ item.role }}</p>
+                </div>
 
-              <p class="text-base md:text-lg lg:text-xl text-[rgb(var(--text))] font-medium leading-relaxed mb-5">
+                <div class="card-stars">
+                  <svg *ngFor="let _ of [].constructor(item.stars)" class="star filled" viewBox="0 0 24 24">
+                    <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"/>
+                  </svg>
+                  <svg *ngFor="let _ of [].constructor(5 - item.stars)" class="star" viewBox="0 0 24 24">
+                    <path d="M12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"/>
+                  </svg>
+                </div>
+              </header>
+
+              <p class="card-quote full mt-3">
                 "{{ item.text }}"
               </p>
-
-              <p class="text-lg lg:text-xl font-semibold text-[rgb(var(--text))]">{{ item.name }}</p>
-              <p class="text-gray-500">{{ item.role }}</p>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </div>
+
+<div class="edge-fade edge-fade--left"></div>
+<div class="edge-fade edge-fade--right"></div>
+
 
     <button (click)="prev()"
       class="absolute left-4 lg:left-12 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl w-12 h-12 rounded-full flex items-center justify-center hover:scale-110 transition-all">

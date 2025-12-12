@@ -1,0 +1,35 @@
+:host {
+  display: block;
+}
+
+.faq-item {
+  background: transparent;
+  border-radius: 18px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.faq-item:hover {
+  background: rgb(var(--border-faq));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item.is-open {
+  background: rgb(var(--border-faq));
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.faq-btn {
+  border: none;
+  background: transparent;
+}
+
+.faq-panel {
+  color: rgb(var(--secondary-text));
+}
+
+.faq-wrapper {
+  max-width: 720px;   
+  min-width: 300px; 
+  width: 100%;     
+}

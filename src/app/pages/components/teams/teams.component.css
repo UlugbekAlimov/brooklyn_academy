@@ -61,7 +61,6 @@
   content: var(--name);
   font-size: 15px;
   font-weight: 700;
-  color: #0b1524;
 }
 
 .card-role::before {

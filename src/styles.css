@@ -10,29 +10,30 @@
 
   --text-secondary: 0 255 162;
   --text-secondary-hover: 68 236 174;
-  
-  --hero-bg: url('/img/white.png');
-  --showcase-bg: url('/img/white2.png');
+
+  --hero-bg: url("/img/white.png");
+  /* --showcase-bg: url('/img/white2.png'); */
   --showcase-opacity: 0.25;
-  --client-logo: 150 160 170; 
+  --client-logo: 150 160 170;
 
   --swiper-bg: 247 250 252;
 
-  --free: url('/img/add-dark.svg');
-  --pro: url('/img/vip.svg');
-  --saver: url('/img/vip-vipwhite.svg');
+  --free: url("/img/add-dark.svg");
+  --pro: url("/img/vip.svg");
+  --saver: url("/img/vip-vipwhite.svg");
+  --showcase-bg: url("/img/4-ChFq4e92.webp");
+    --enterprice: url("/img/enterprice.svg");
 
-  --input-bg: #f5f5f5;      
-  --input-border: #d0d0d0;      
-  --input-text: #000000;        
-  --input-placeholder: #777;   
-  --input-focus: #3b82f6;  
 
-  --footer-bg: url('/img/white-footer.png');
-  --showcase-bg: url('/img/4-ChFq4e92.webp');
+  --input-bg: #f5f5f5;
+  --input-border: #d0d0d0;
+  --input-text: #000000;
+  --input-placeholder: #777;
+  --input-focus: #3b82f6;
+
+  --footer-bg: url("/img/white-footer.png");
 
   --border-faq: 247 250 252;
-
 }
 
 [data-theme="black"] {
@@ -46,28 +47,28 @@
   --text-secondary: 0 255 162;
   --text-secondary-hover: 68 236 174;
 
-  --hero-bg: url('/img/dark.png');
-  --showcase-bg: url('/img/dark2.png');
-  --showcase-opacity: 1; 
+  --hero-bg: url("/img/dark.png");
+  /* --showcase-bg: url('/img/dark2.png'); */
+  --showcase-opacity: 1;
   --client-logo: 210 220 230;
 
   --swiper-bg: 17 20 23;
 
-  --free: url('/img/add-white.svg');
-  --pro: url('/img/vip-dark.svg');
-  --saver: url('/img/vip-vipdark.svg');
+  --free: url("/img/add-white.svg");
+  --pro: url("/img/vip-dark.svg");
+  --saver: url("/img/vip-vipdark.svg");
+  --enterprice: url("/img/enterprice-white.svg");
 
-  --input-bg: #181b1e;        
-  --input-border: #2a2d30;      
-  --input-text: #ffffff;        
+  --input-bg: #181b1e;
+  --input-border: #2a2d30;
+  --input-text: #ffffff;
   --input-placeholder: #8c8c8c;
-  --input-focus: #22d3ee;      
+  --input-focus: #22d3ee;
 
-  --footer-bg: url('/img/dark-footer.png');
-  --showcase-bg: url('/img/4-ChFq4e92.webp');
+  /* --footer-bg: url('/img/dark-footer.png'); */
+  --showcase-bg: url("/img/4-ChFq4e92.webp");
 
   --border-faq: 24 26 30;
-
 }
 
 input::placeholder {
@@ -77,6 +78,8 @@ input::placeholder {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
 }
 
 html {
@@ -99,7 +102,6 @@ html {
   @apply text-sm text-gray-500;
 }
 
-
 /* PATTERN BACKGROUND */
 .pattern {
   position: relative;
@@ -113,11 +115,11 @@ html {
   pointer-events: none;
   z-index: 0;
   background-image: repeating-linear-gradient(
-      -45deg,
-      var(--pattern-line) 0px,
-      var(--pattern-line) 1px,
-      transparent 1px,
-      transparent 10px
+    -45deg,
+    var(--pattern-line) 0px,
+    var(--pattern-line) 1px,
+    transparent 1px,
+    transparent 10px
   );
 }
 
@@ -125,5 +127,3 @@ html {
   position: relative;
   z-index: 1;
 }
-
-

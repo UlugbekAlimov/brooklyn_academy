@@ -13,39 +13,29 @@ export class FaqComponent {
 
   faqItems = [
     {
-      question: 'Lorem ipsum dolor sit amet.',
+      question: 'What is Brooklyn Academy?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
+        'Brooklyn Academy is an innovative Learning Management System (LMS) designed to enhance training and workforce development. We provide seamless digital solutions for educational institutions and businesses to manage, track, and improve learning processes.',
     },
     {
-      question: 'Lorem ipsum dolor sit amet.',
+      question: 'How do I get started with Brooklyn Academy?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
+        'Simply sign up on our website to begin your learning journey. Choose a plan that fits your needs, and you’ll get access to all the features necessary to kickstart your educational experience.',
     },
     {
-      question: 'Lorem ipsum dolor sit amet.',
+      question: 'What makes Brooklyn Academy different from other LMS providers?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
+        'Our LMS is tailored to support both students and instructors. With real-time collaboration tools, advanced analytics, AI-driven support, and customizable features, we focus on delivering an engaging and efficient learning experience that is backed by real-world operational expertise.',
     },
     {
-      question: 'Lorem ipsum dolor sit amet.',
+      question: 'Can I integrate Brooklyn Academy with other tools or platforms?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
+        'Yes, our platform supports third-party integrations, allowing you to connect with a wide range of tools and systems. This flexibility ensures you can work seamlessly within your existing workflow.',
     },
     {
-      question: 'Lorem ipsum dolor sit amet.',
+      question: 'How does Brooklyn Academy ensure data privacy and security?',
       answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
-    },
-    {
-      question: 'Lorem ipsum dolor sit amet.',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
-    },
-    {
-      question: 'Lorem ipsum dolor sit amet.',
-      answer:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lacus ac ex tempus, sed dictum libero lacinia. Cras velit mauris, venenatis vel posuere at, scelerisque sed eros.',
+        'We take data protection seriously. Our platform uses advanced encryption, secure cloud storage, and regular security audits to ensure that your information is safeguarded at all times. Additionally, we comply with international data protection regulations to provide you with the utmost security.',
     },
   ];
 

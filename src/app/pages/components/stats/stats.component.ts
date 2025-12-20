@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class StatsComponent {
   stats = [
-    { value: '4,000+', label: 'Users and still counting' },
-    { value: '$25,000', label: 'In revenue and still generating' },
-    { value: '3%', label: 'Flat platform fee' },
-    { value: '5,152', label: 'Transactions this year' }
+    { value: '4,00+', label: 'Applicants' },
+    { value: '100+', label: ' Interview Reports' },
+    { value: '30+', label: 'Graduates' },
+    { value: 'Real-time', label: 'Track progress & performance with real-time data' }
   ];
 }

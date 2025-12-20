@@ -71,12 +71,12 @@ img {
   bottom: -1px;
   width: 0;
   height: 2px;
-  background: rgb(96 165 250); 
+  background: rgb(var(--text-secondary));
   transition: width .25s ease;
 }
 
 .tab-btn.active {
-  color: rgb(96 165 250); 
+  color: rgb(var(--text-secondary));
 }
 
 .tab-btn.active::after {

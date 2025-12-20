@@ -95,15 +95,6 @@
   width: 80px;
   pointer-events: none;
   z-index: 10;
-  background: linear-gradient(
-    to right,
-    rgba(var(--bg), 1) 0%,
-    rgba(var(--bg), 0.95) 20%,
-    rgba(var(--bg), 0.75) 40%,
-    rgba(var(--bg), 0.40) 60%,
-    rgba(var(--bg), 0.15) 80%,
-    rgba(var(--bg), 0.00) 100%
-  );
 }
 
 .edge-fade--right {
